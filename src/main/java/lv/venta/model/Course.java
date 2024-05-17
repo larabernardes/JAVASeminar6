@@ -37,8 +37,8 @@ public class Course {
 	private long idc;
 	
 	@NotNull
-	@Pattern(regexp = "[A-Z]{1}[a-z]+")
-	@Size(min = 2, max = 10)
+	@Pattern(regexp = "[A-Z]{1}[a-zA-Z ]+")
+	@Size(min = 2, max = 20)
 	@Column(name = "Title")
 	private String title;
 	
@@ -55,7 +55,7 @@ public class Course {
 	@ToString.Exclude
 	private Collection<Grade> grades;
 	
-	public Course(String Title, int creditPoints, Professor professor) {
+	public Course(String title, int creditPoints, Professor professor) {
 		setTitle(title);
 		setCreditPoints(creditPoints);
 		setProfessor(professor);
