@@ -1,11 +1,14 @@
 package lv.venta.model;
 
+import java.util.Collection;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Max;
@@ -48,9 +51,14 @@ public class Course {
 	@JoinColumn(name = "Idp")// Need to specify column name
 	private Professor professor;
 	
+	@OneToMany(mappedBy = "course")
+	@ToString.Exclude
+	private Collection<Grade> grades;
+	
 	public Course(String Title, int creditPoints, Professor professor) {
 		setTitle(title);
 		setCreditPoints(creditPoints);
+		setProfessor(professor);
 		
 	}
 	

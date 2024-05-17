@@ -43,10 +43,14 @@ public class Grade {
 	@JoinColumn(name = "Ids")
 	private Student student;
 	
-	public Grade(String Title, int creditPoints, Professor professor) {
-		setTitle(title);
-		setCreditPoints(creditPoints);
-		
+	@ManyToOne
+	@JoinColumn(name = "Idc")
+	private Course course;
+	
+	public Grade(int grvalue, Student student, Professor professor, Course course) {
+		setGrvalue(grvalue);
+		setStudent(student);
+		setCourse(course);
 	}
 	
 	
