@@ -46,7 +46,7 @@ public class Seminar6Application {
 				courseRepo.save(c1);
 				courseRepo.save(c2);
 				
-				Grade g1 = new Grade(4, s1, c1);
+				Grade g1 = new Grade(3, s1, c1);
 				Grade g2 = new Grade(6, s1, c2);
 				Grade g3 = new Grade(10, s2, c1);
 				Grade g4 = new Grade(7, s2, c2);

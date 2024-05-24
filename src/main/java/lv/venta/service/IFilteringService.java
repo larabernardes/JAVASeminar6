@@ -17,13 +17,13 @@ involved;
  */
 	public abstract ArrayList<Grade> selectFailedGradesInSystem()throws Exception; 
 	
-	public abstract ArrayList<Grade> selectGradesByStudentId(int id)throws Exception;
+	public abstract ArrayList<Grade> selectGradesByStudentId(long id)throws Exception;
 	
-	public abstract ArrayList<Course> selectCoursesByStudentId(int id)throws Exception;
+	public abstract ArrayList<Course> selectCoursesByStudentId(long id)throws Exception;
 	
-	public abstract ArrayList<Course> selectCoursesByProfessorId(int id)throws Exception;
+	public abstract ArrayList<Course> selectCoursesByProfessorId(long id)throws Exception;
 	
-	public abstract ArrayList<Course> calculateAVGGradeInCourseByID(int id)throws Exception;	
+	public abstract ArrayList<Course> calculateAVGGradeInCourseByID(long id)throws Exception;	
 	
 	
 }
