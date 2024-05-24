@@ -77,12 +77,14 @@ public class FilteringServiceImpl implements IFilteringService {
 	}
 
 	@Override
-	public ArrayList<Course> calculateAVGGradeInCourseByID(long id) throws Exception {
+	public float calculateAVGGradeInCourseByID(long id) throws Exception {
 		if(id < 1) throw new Exception("Id should be positive");
 		
-		if(id < 1) throw new Exception("Id should be positive");
+		if(!CourseRepo.existsById(id)) throw new Exception("Course with id (" + id + ") is not in the system");
 		
-		float result;
+		float result = gradeRepo.calculateAVGGrade_MyFunction(id);
+		
+		if(result == 0) throw new Exception("There is no grade in this course");
 		
 		return result;
 	}

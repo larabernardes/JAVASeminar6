@@ -23,7 +23,7 @@ involved;
 	
 	public abstract ArrayList<Course> selectCoursesByProfessorId(long id)throws Exception;
 	
-	public abstract ArrayList<Course> calculateAVGGradeInCourseByID(long id)throws Exception;	
+	public abstract float calculateAVGGradeInCourseByID(long id)throws Exception;	
 	
 	
 }
