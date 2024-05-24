@@ -1,0 +1,32 @@
+<html xmlns:th"http://www.thymreleaf.org">
+	
+	<body>
+		
+		<p> All grades: </p>
+		<table border = "1">
+			
+			<tr>
+				<th> IDG </th>
+				<th> GRADE VALUE </th>
+				<th> STUDENT NAME </th>
+				<th> STUDENT SURNAME </th>
+				<th> TITLE </th>
+				
+				
+			</tr>
+			
+			<tr th:each="temp : ${myPackage} "> 
+				
+				<td th:text="${temp.getIdg()}"> </td> 
+				<td th:text="${temp.getGrvalue()}"> </td> 
+				<td th:text="${temp.getStudent().getName()}"> </td> 
+				<td th:text="${temp.getStudent().getSurname()}"> </td> 
+				<td th:text="${temp.getCourse().getTitle()}"> </td> 
+				
+			</tr>
+			
+		</table>
+		
+	</body>
+	
+</html>
