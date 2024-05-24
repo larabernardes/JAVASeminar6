@@ -50,7 +50,12 @@ public class FilteringServiceImpl implements IFilteringService {
 	public ArrayList<Course> selectCoursesByStudentId(long id) throws Exception {
 		if(id < 1) throw new Exception("Id should be positive");
 		
-		if(!CourseRepo.existsById(id)) throw new Exception("Student with id (" + id + ") is not in the system");
+		if(!StudentRepo.existsById(id)) throw new Exception("Student with id (" + id + ") is not in the system");
+		
+
+		ArrayList<Course> result = CourseRepo.findByGradesStudentIds(id);
+		
+		if(result.isEmpty()) throw new Exception("Professor with id (" + id + ") does not have any courses");
 		
 		
 		
@@ -73,8 +78,13 @@ public class FilteringServiceImpl implements IFilteringService {
 
 	@Override
 	public ArrayList<Course> calculateAVGGradeInCourseByID(long id) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		if(id < 1) throw new Exception("Id should be positive");
+		
+		if(id < 1) throw new Exception("Id should be positive");
+		
+		float result;
+		
+		return result;
 	}
 
 }
